@@ -2,18 +2,106 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMusic.Views.LoginPage"
-             BackgroundColor="Black">
+             Background="Black">
     <VerticalStackLayout>
-        <Image Source="logo.png" WidthRequest="325" HeightRequest="275"/>
-        <Label Text="Login to your account" FontSize="32" TextColor="White"
-        FontFamily="DidactGothic" HorizontalOptions="Center" Margin="0,20,0,0"/>
+        <Image Source="logo.png" WidthRequest="250" HeightRequest="230"/>
+        <Label Text="Login to your account" FontFamily="DidactGothic" TextColor="White" FontSize="32" HorizontalOptions="Center"></Label>
 
-        <Border HeightRequest="50" BackgroundColor="#DBE7E8" Stroke ="Transparent" Padding="10,0,10,0">
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="10"/>
-            </Border.StrokeShape>
-            <Entry Placeholder="Email" BackgroundColor="#DBE7E8" TextColor="Black" FontSize="20" FontFamily="Mulish"
-                 />
-        </Border>
+
+        <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <VerticalStackLayout>
+                <Border Background="#1E1E1E" Margin="0,5,0,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="Auto, *" 
+          Padding="15,0" 
+          VerticalOptions="Center">
+                        <Image Grid.Column="0" 
+               Source="mail.png" 
+               WidthRequest="24" 
+               HeightRequest="24" 
+               VerticalOptions="Center" 
+               Margin="0,0,5,0"/>
+
+                        <Entry Grid.Column="1" 
+               Placeholder="Email" 
+               PlaceholderColor="#888888"
+               TextColor="White"
+               BackgroundColor="Transparent" 
+               VerticalOptions="Center" WidthRequest="300" HeightRequest="59"/>
+                    </Grid>
+
+                </Border>
+
+                <Border Background="#1E1E1E" Margin="0,15,0,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
+
+                    <Grid ColumnDefinitions="Auto, *" 
+          Padding="15,0" 
+          VerticalOptions="Center">
+                        <Image Grid.Column="0" 
+               Source="lock.png" 
+               WidthRequest="24" 
+               HeightRequest="24" 
+               VerticalOptions="Center" 
+               Margin="0,0,10,0"/>
+
+                        <Entry Grid.Column="1" 
+               Placeholder="Password" 
+               PlaceholderColor="#888888"
+               TextColor="White"
+               BackgroundColor="Transparent" 
+               VerticalOptions="Center" WidthRequest="300" HeightRequest="59"/>
+                    </Grid>
+
+                </Border>
+
+                <HorizontalStackLayout>
+                    <CheckBox Color="#00C2CB"/>
+                    <Label Text="Remember me" TextColor="White" VerticalOptions="Center"  FontFamily="DidactGothic"/>
+                </HorizontalStackLayout>
+
+                <Button
+              Text="Log in"
+              BackgroundColor="#06A0B5"
+              TextColor="White"
+              FontSize="16"
+                    FontFamily="Mulish"
+              CornerRadius="20"
+              HeightRequest="50"
+              WidthRequest="310"
+              HorizontalOptions="Center"
+              Margin="0,15,0,0"
+              />
+                <Label Text="Forgot the password?" TextColor="#39C0D4" HorizontalOptions="Center" Margin="0,19,0,0"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Margin="0,15,0,0">
+                    <Line X1="0" Y1="0" X2="100" Y2="0" Stroke="White" StrokeThickness="0.8" VerticalOptions="Center"/>
+                    <Label Text="  or continue with  " TextColor="White"></Label>
+                    <Line X1="0" Y1="0" X2="100" Y2="0" Stroke="White" StrokeThickness="0.8" VerticalOptions="Center"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Margin="15">
+                    <ImageButton Source="google.png" Padding="20" ></ImageButton>
+                    <ImageButton Source="fb.png" Padding="20" ></ImageButton>
+                    <ImageButton Source="apple.png" Padding="20"></ImageButton>
+                </HorizontalStackLayout>
+
+                <Label FontFamily="DidactGothic" HorizontalOptions="Center" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Don’t have an account? " TextColor="White"/>
+                            <Span Text=" Sign Up " TextColor="#06A0B5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
     </VerticalStackLayout>
 </ContentPage>
